@@ -6,8 +6,10 @@
 {% block content %}
 <section class="recipe-container">
   <div class="recipe-img">
-    <img src="" alt="Recipe Icon" />
-  </div>
+ <img
+          src="{% static 'images/dinner-plate1.svg' %}"
+          alt="A dinner plate with fork and knife"
+        />  </div>
   <div class="recipe-details">
     <h1>{{ recipe.name }}</h1>
     <h2>{{ recipe.cuisine }}</h2>
@@ -25,8 +27,8 @@
     <div class="subsection-title">
       <h2>Instructions</h2>
       <img
-        src=""
-        alt="Instruction Icon"
+        src="{% static 'images/number-list.svg' %}"
+        alt="A numbered list 1, 2, 3"
       />
     </div>
     {% if recipe.instruction_set.all.count %}
@@ -63,6 +65,25 @@
   </section>
 
   <section class="pantry">
+      <div class="subsection-title">
+    
+    <img
+    src="{% static 'images/fruits1.svg' %}"
+    alt="Two pieces of Fruit"
+  />
+  <img
+    src="{% static 'images/veggies.svg' %}"
+    alt="A box of Vegetables"
+  />
+  <img
+    src="{% static 'images/steak.svg' %}"
+    alt="A Fillet of Steak"
+  />
+  <img
+    src="{% static 'images/bread.svg' %}"
+    alt="A Loaf of Bread"
+  />
+  </div>
     <div class="subsection-content">
       <h3>{{ recipe.name }}'s Ingredients</h3>
       {% if recipe.pantry.count %} 
@@ -87,9 +108,9 @@
   <section class="pantry">
     <div class="subsection-title">
       <h2>Pantry Items</h2>
-      <img src="" alt="pantry icon" />
-      <img src="" alt="pantry icon" />
-      <img src="" alt="pantry icon" />
+      <img src="{% static 'images/salt-pepper1.svg' %}" alt="Salt and pepper shaker" />
+      <img src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
+      <img src="{% static 'images/salt-pepper2.svg' %}" alt="Salt and pepper shaker" />
     </div>
 
     <div class="subsection-content">

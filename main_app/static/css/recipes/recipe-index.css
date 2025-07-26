@@ -1,38 +1,77 @@
-.card-container {
-  padding: 0 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+/* ------------------------------
+   Layout: Page Header
+------------------------------ */
+.page-header {
+  background-color: #f7fcf5;
+  text-align: center;
+  padding: 2rem;
 }
 
+.page-header h1 {
+  font-size: 2rem;
+  color: #3a5a40;
+  margin-bottom: 1rem;
+}
+
+
+/* ------------------------------
+   Layout: Card Container
+------------------------------ */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+
+/* ------------------------------
+   Card Component
+------------------------------ */
 .card {
-  width: 275px;
-  margin: 10px;
-  border: var(--borders);
-  box-shadow: var(--card-box-shadow);
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  width: 260px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card-content {
-  padding: 10px;
-  width: 100%;
+  text-align: center;
 }
 
-.usr-img {
-  width: 100%;
-  border-radius: var(--card-border-radius);
+
+/* ------------------------------
+   Images
+------------------------------ */
+.card-img-container img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1rem;
 }
 
-.card > a {
-  text-decoration: none;
-  color: var(--text-color);
+.icon {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin: 0.5rem;
 }
 
-.card h2 {
-  margin: 10px 0;
-  font-size: var(--font-xl);
-}
 
-.card p {
-  margin: 5px 0;
-  font-size: var(--font-reg);
+/* ------------------------------
+   Typography
+------------------------------ */
+.card-title {
+  color: #3a5a40;
+  margin: 0.5rem 0;
 }

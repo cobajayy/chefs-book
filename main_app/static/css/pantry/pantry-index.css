@@ -1,64 +1,29 @@
+.page-header {
+  background-color: #a3b18a;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
 .card-container {
-  padding: 0 40px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
 .card {
-  width: 224px;
-  height: 224px;
-  margin: 10px;
-  border: solid 2px;
-  box-shadow: var(--card-box-shadow);
-  position: relative;
-}
-
-.card-bg {
-  opacity: 0.4;
-  position: absolute;
-  display: inline-flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.card-content {
-  padding: 15px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.card > a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  text-decoration: none;
-  color: var(--text-color);
+  background-color: #dce2d5;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-  margin: 7px 0;
-  font-size: var(--font-xl);
+  color: #344e41;
 }
 
 .card p {
-  margin: 0;
-  font-size: var(--font-reg);
-}
-
-.page-header > img {
-  margin-left: 10px;
-}
-
-.page-header > img:first-of-type {
-  margin-left: 15px;
+  color: #606c38;
 }
