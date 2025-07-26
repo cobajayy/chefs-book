@@ -26,7 +26,8 @@
 
 .instructions-pantry-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding-bottom: 20px;
   align-items: center;
 }

@@ -63,47 +63,50 @@
   </section>
 
   <section class="pantry">
-  <div class="subsection-title">
-    <h2>Pantry Items</h2>
-    <img src="" alt="pantry icon" />
-    <img src="" alt="pantry icon" />
-    <img src="" alt="pantry icon" />
-  </div>
+    <div class="subsection-content">
+      <h3>{{ recipe.name }}'s Ingredients</h3>
+      {% if recipe.pantry.count %} 
+        {% for pantry in recipe.pantry.all %}
+          <div class="pantry-container">
+            <div class="color-block"></div>
+            <a href="{% url 'pantry_detail' pantry.id %}">
+              <p>{{ pantry.quantity }} {{ pantry.measurement }} {{ pantry.name }}</p>
+              <form action="{% url 'remove_pantry' recipe.id pantry.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn submit">Remove Item</button>
+          </form>
+            </a>
+          </div>
+        {% endfor %} 
+      {% else %}
+        <p class="no-pantry">{{recipe.name}} doesn't have any ingredients!</p>
+      {% endif %}
+    </div>
+  </section>
 
-  <h3>{{ recipe.name }}'s Ingredients</h3>
-  <div class="subsection-content">
-    {% if recipe.pantry.count %} 
-      {% for pantry in recipe.pantry.all %}
+  <section class="pantry">
+    <div class="subsection-title">
+      <h2>Pantry Items</h2>
+      <img src="" alt="pantry icon" />
+      <img src="" alt="pantry icon" />
+      <img src="" alt="pantry icon" />
+    </div>
+
+    <div class="subsection-content">
+      <h3>Available Ingredients</h3>
+      {% for pantry in pantry %}
         <div class="pantry-container">
-          <div class="color-block"></div>
-          <a href="{% url 'pantry_detail' pantry.id %}">
-            <p>{{ pantry.quantity }} {{ pantry.measurement }} {{ pantry.name }}</p>
-             <form action="{% url 'remove_pantry' recipe.id pantry.id %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="btn submit">Remove Item</button>
-        </form>
-          </a>
+          <div class="color-block" ></div>
+          <p><strong>{{ pantry.name }}</strong></p>
+          <form action="{% url 'associate_pantry' recipe.id pantry.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn submit">Add Item</button>
+          </form>
         </div>
-      {% endfor %} 
-    {% else %}
-      <p class="no-pantry">{{recipe.name}} doesn't have any ingredients!</p>
-    {% endif %}
-  </div>
+      {% endfor %}
+    </div>
+  </section>
 
-  <div class="subsection-content">
-    <h3>Available Ingredients</h3>
-    {% for pantry in pantry %}
-      <div class="pantry-container">
-        <div class="color-block" ></div>
-        <p><strong>{{ pantry.name }}</strong></p>
-        <form action="{% url 'associate_pantry' recipe.id pantry.id %}" method="post">
-          {% csrf_token %}
-          <button type="submit" class="btn submit">Add Item</button>
-        </form>
-      </div>
-    {% endfor %}
-  </div>
-</section>
 </div>
 
 {% endblock %}
