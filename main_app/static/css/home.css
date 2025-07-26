@@ -24,7 +24,14 @@ main > section {
 }
 
 .recipe-container {
-  width: 80%;
+  width: 100%;
+}
+.recipe-container img {
+  max-width: 800px; /* Adjust size as needed */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center it */
 }
 
 .login {

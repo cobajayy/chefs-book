@@ -28,7 +28,7 @@ x{% extends 'base.html' %} {% load static %} {% block head %}
 <section class="card-container">
   {% for recipe in recipes %}
   <div class="card">
-    <a href="{% url 'recipe_detail' recipe.id %}"></a>
+    <a href="{% url 'recipe_detail' recipe.id %}">
     <div class="card-content">
       <div class="card-img-container">
         <img
@@ -40,6 +40,7 @@ x{% extends 'base.html' %} {% load static %} {% block head %}
       <h3 class="card-title">{{ recipe.cuisine }}</h3>
       <p><small>{{ recipe.description }}</small></p>
     </div>
+    </a>
   </div>
   {% endfor %}
 </section>

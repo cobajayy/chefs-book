@@ -12,6 +12,98 @@
     <h1>{{ recipe.name }}</h1>
     <h2>{{ recipe.cuisine }}</h2>
     <p>{{ recipe.description }}</p>
+
+    <div class="recipe-actions">
+        <a href="{% url 'recipe_update' recipe.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'recipe_delete' recipe.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
+
+<div class="instructions-pantry-container">
+  <section class="instructions">
+    <div class="subsection-title">
+      <h2>Instructions</h2>
+      <img
+        src=""
+        alt="Instruction Icon"
+      />
+    </div>
+    {% if recipe.instruction_set.all.count %}
+    <table>
+      <thead>
+        <tr>
+          <th>Steps</th>
+          <th>Instructions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for instruction in recipe.instruction_set.all %}
+          <tr>
+            <td>{{instruction.step}}</td>
+            <td>{{instruction.instruction}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+        <div class="subsection-content">
+            <p><strong>
+                {{ recipe.name }} has no instructions yet!
+            </strong></p>
+        </div>
+    {% endif %}
+    <h3>Add Instructions</h3>
+    <form action="{% url 'add_instruction' recipe.id %}" method="post" class="subsection-content" autocomplete="off">
+        {% csrf_token %}
+        {{ instruction_form.as_p }}
+        <button type="submit" class="btn submit">Add Instructions</button>
+    </form>
+    
+  </section>
+
+  <section class="pantry">
+  <div class="subsection-title">
+    <h2>Pantry Items</h2>
+    <img src="" alt="pantry icon" />
+    <img src="" alt="pantry icon" />
+    <img src="" alt="pantry icon" />
+  </div>
+
+  <h3>{{ recipe.name }}'s Ingredients</h3>
+  <div class="subsection-content">
+    {% if recipe.pantry.count %} 
+      {% for pantry in recipe.pantry.all %}
+        <div class="pantry-container">
+          <div class="color-block"></div>
+          <a href="{% url 'pantry_detail' pantry.id %}">
+            <p>{{ pantry.quantity }} {{ pantry.measurement }} {{ pantry.name }}</p>
+             <form action="{% url 'remove_pantry' recipe.id pantry.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn submit">Remove Item</button>
+        </form>
+          </a>
+        </div>
+      {% endfor %} 
+    {% else %}
+      <p class="no-pantry">{{recipe.name}} doesn't have any ingredients!</p>
+    {% endif %}
+  </div>
+
+  <div class="subsection-content">
+    <h3>Available Ingredients</h3>
+    {% for pantry in pantry %}
+      <div class="pantry-container">
+        <div class="color-block" ></div>
+        <p><strong>{{ pantry.name }}</strong></p>
+        <form action="{% url 'associate_pantry' recipe.id pantry.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn submit">Add Item</button>
+        </form>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+</div>
+
 {% endblock %}
