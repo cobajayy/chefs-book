@@ -56,29 +56,31 @@ def add_instruction(request, recipe_id):
         new_instruction.save()
     return redirect('recipe_detail', recipe_id=recipe_id)
 
-class PantryCreate(CreateView):
+class PantryCreate(LoginRequiredMixin, CreateView):
     model = Pantry
     fields = '__all__'
 
-class PantryList(ListView):
+class PantryList(LoginRequiredMixin, ListView):
     model = Pantry
 
-class PantryDetail(DetailView):
+class PantryDetail(LoginRequiredMixin, DetailView):
     model = Pantry
 
-class PantryUpdate(UpdateView):
+class PantryUpdate(LoginRequiredMixin, UpdateView):
     model = Pantry
     fields = '__all__'
     success_url = '/pantry/'
 
-class PantryDelete(DeleteView):
+class PantryDelete(LoginRequiredMixin, DeleteView):
     model = Pantry
     success_url = '/pantry/'
 
+@login_required
 def associate_pantry(request, recipe_id, pantry_id):
     Recipe.objects.get(id=recipe_id).pantry.add(pantry_id)
     return redirect('recipe_detail', recipe_id=recipe_id)
 
+@login_required
 def remove_pantry(request, recipe_id, pantry_id):
     Recipe.objects.get(id=recipe_id).pantry.remove(pantry_id)
     return redirect('recipe_detail', recipe_id=recipe_id)
