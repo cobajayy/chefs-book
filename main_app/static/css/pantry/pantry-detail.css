@@ -10,3 +10,19 @@
 .card-content h2 {
   color: #3a5a40;
 }
+
+.btn:hover {
+  background-color: #3a5a40;
+}
+
+.btn.danger {
+  background-color: #bc4749;
+}
+
+.btn.warn {
+  background-color: #7e9578;
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+}

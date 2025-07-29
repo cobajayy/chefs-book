@@ -1,23 +1,42 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block head %}
-  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
-{% endblock %} 
-{% block content %}
-  <div class="page-header">
-    {% if object %}
-      <h1>Edit {{object.name}}</h1>
-    {% else %}
-      <h1>Add a Pantry Item</h1>
-    {% endif %}
-    <img src="" alt="Pantry Item Icon" />
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %} {% block content %}
+<div class="page-header">
+  {% if object %}
+  <h1>Edit {{object.name}}</h1>
+  {% else %}
+  <h1>Add a Pantry Item</h1>
+  {% endif %}
+  <div class="icon-row">
+    <img
+      class="icon"
+      src="{% static 'images/salt-pepper1.svg' %}"
+      alt="Salt and pepper shaker"
+    />
+    <img
+      class="icon"
+      src="{% static 'images/olive-oil2.svg' %}"
+      alt="pantry icon"
+    />
+
+    <img
+      class="icon"
+      src="{% static 'images/salt-pepper1.svg' %}"
+      alt="Salt and pepper shaker"
+    />
+    <img
+      class="icon"
+      src="{% static 'images/olive-oil2.svg' %}"
+      alt="pantry icon"
+    />
   </div>
-  <form action="" method="post" class="form-container" autocomplete="off">
-    {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <button type="submit" class="btn submit">Submit!</button>
-  </form>
+</div>
+<form action="" method="post" class="form-container" autocomplete="off">
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+  </table>
+  <button type="submit" class="btn submit">Submit!</button>
+</form>
 
 {% endblock %}

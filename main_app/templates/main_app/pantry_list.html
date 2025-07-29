@@ -7,16 +7,17 @@
 
 <section class="page-header">
   <h1>All Pantry Items</h1>
-  <img src="" alt="Pantry Icon" />
-  <img src="" alt="Pantry Icon" />
-  <img src="" alt="Pantry Icon" />
-  <img src="" alt="Pantry Icon" />
+      <img class='icon' src="{% static 'images/salt-pepper1.svg' %}" alt="Salt and pepper shaker" />
+      <img class='icon' src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
+     
+      <img class='icon' src="{% static 'images/salt-pepper1.svg' %}" alt="Salt and pepper shaker" />
+      <img class='icon' src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
+     
 </section>
 
 <section class="card-container">
   {% for pantry in pantry_list %}
     <div class="card" >
-      <div class="card-bg"></div>
       <a href="{% url 'pantry_detail' pantry.id %}">
         <div class="card-content">
           <h2>{{ pantry.name }}</h2>

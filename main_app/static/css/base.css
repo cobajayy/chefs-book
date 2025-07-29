@@ -1,4 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 100%;
+}
 body {
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
   background-color: #f8fdf9;
   color: #2f3e34;
@@ -7,14 +25,19 @@ body {
 }
 
 header, nav {
+  width: 100%;
   background-color: #a3b18a;
   color: white;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+nav {
+  margin: 10px;
 }
 
 .header-logo-container img {
-  height: 80px; /* adjust height as needed */
-  width: auto; /* maintains aspect ratio */
+  height: 80px;
+  width: auto; 
   object-fit: contain;
   display: block;
 }
@@ -22,6 +45,10 @@ header, nav {
 nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
   gap: 1rem;
   padding: 0;
 }
@@ -32,20 +59,36 @@ nav ul li a, nav ul li button {
   background: none;
   border: none;
   font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 nav ul li button:hover, nav ul li a:hover {
-  text-decoration: underline;
+ 
+  text-decoration: none;
+  cursor: pointer;
+
 }
 
 .btn {
   background-color: #588157;
   color: white;
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
+  cursor: pointer; */
+
+  padding: 8px 16px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  text-decoration: none;
+  font-weight: 600;
   cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
 }
+
 
 .btn:hover {
   background-color: #3a5a40;
@@ -56,7 +99,7 @@ nav ul li button:hover, nav ul li a:hover {
 }
 
 .btn.warn {
-  background-color: #f4a261;
+  background-color: #7e9578;
 }
 
 .btn.secondary {

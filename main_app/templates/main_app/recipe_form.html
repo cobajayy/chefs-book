@@ -1,17 +1,35 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/form.css' %}" />
-{% endblock %} 
-{% block content %}
+{% endblock %} {% block content %}
 
 <div class="page-header">
-    {% if recipe %}
-        <h1>Edit {{ recipe.name }}</h1>
-    {% else %}
-        <h1>Add a Recipe</h1>
-    {% endif %}
-  <img src="" alt="Recipe Icon" />
+  {% if recipe %}
+  <h1>Edit {{ recipe.name }}</h1>
+  {% else %}
+  <h1>Add a Recipe</h1>
+  {% endif %}
+  <div class="icon-row">
+    <img
+      src="{% static 'images/fruits1.svg' %}"
+      alt="Two pieces of Fruit"
+      class="icon"
+    />
+    <img
+      src="{% static 'images/veggies.svg' %}"
+      alt="A box of Vegetables"
+      class="icon"
+    />
+    <img
+      src="{% static 'images/steak.svg' %}"
+      alt="A Fillet of Steak"
+      class="icon"
+    />
+    <img
+      src="{% static 'images/bread.svg' %}"
+      alt="A Loaf of Bread"
+      class="icon"
+    />
+  </div>
 </div>
 
 <form action="" method="post" class="form-container">
@@ -19,7 +37,7 @@
   <table>
     {{ form.as_table }}
   </table>
-  <button type="submit" class="btn submit">Submit!</button>
+  <button type="submit" class="btn">Submit!</button>
 </form>
 
 {% endblock %}

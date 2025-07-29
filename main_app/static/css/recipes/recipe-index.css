@@ -4,7 +4,7 @@
 .page-header {
   background-color: #f7fcf5;
   text-align: center;
-  padding: 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .page-header h1 {
@@ -23,6 +23,7 @@
   justify-content: center;
   gap: 1.5rem;
   padding: 2rem;
+
 }
 
 
@@ -38,6 +39,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
+
 }
 
 .card:hover {
@@ -74,4 +76,10 @@
 .card-title {
   color: #3a5a40;
   margin: 0.5rem 0;
+
+}
+
+.card a {
+  text-decoration: none;
+  color: inherit;
 }

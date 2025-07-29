@@ -14,6 +14,12 @@
   gap: 2rem;
   padding: 2rem;
   background-color: #eef6e9;
+
+}
+
+.pantry-container a {
+  color: #2f3e34;
+  text-decoration: none;
 }
 
 /* ========== Recipe Section ========== */
@@ -62,6 +68,7 @@
 /* ========== Subsection Content ========== */
 
 .subsection-content {
+ 
   background-color: #f7fcf5;
   padding: 1rem;
   border-radius: 8px;
@@ -95,4 +102,24 @@ table td {
   height: 60px;
   width: auto;
   object-fit: contain;
+}
+
+.btn {
+  background-color: #588157;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
+}
+
+
+.btn:hover {
+  background-color: #3a5a40;
 }

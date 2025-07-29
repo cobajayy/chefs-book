@@ -11,6 +11,17 @@ class MeasurementType(models.TextChoices):
     TABLESPOON = 'tbsp', 'Tablespoon'
     CUP = 'cup', 'Cup'
 
+class CuisineType(models.TextChoices):
+    AFRICAN = 'African'
+    AMERICAN = 'American'
+    ASIAN = 'Asian'
+    DESSERT = 'Dessert'
+    EUROPEAN = 'European'
+    LATIN = 'Latin'
+    MIDDLEEASTERN = 'Middle Eastern'
+ 
+
+
 class Pantry(models.Model):
     name = models.CharField(max_length=50)
     quantity = models.PositiveIntegerField()
@@ -28,7 +39,10 @@ class Pantry(models.Model):
     
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
-    cuisine = models.CharField(max_length=100)
+    cuisine = models.CharField(
+        choices=CuisineType.choices,
+        default=CuisineType.AFRICAN,
+    )
     description = models.TextField(max_length=300)
     pantry = models.ManyToManyField(Pantry)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
