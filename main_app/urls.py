@@ -17,6 +17,5 @@ urlpatterns = [
     path('pantry/<int:pk>/delete', views.PantryDelete.as_view(), name='pantry_delete'),
     path('recipes/<int:recipe_id>/associate-pantry/<int:pantry_id>/', views.associate_pantry, name="associate_pantry"),
     path('recipes/<int:recipe_id>/remove-pantry/<int:pantry_id>/', views.remove_pantry, name="remove_pantry"),
-
     path('accounts/signup', views.signup, name='signup'),
 ]

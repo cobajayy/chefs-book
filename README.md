@@ -36,4 +36,5 @@ Deployed Link: Coming Soon
         </li>
         <li>I want to render an image based off the cuisine instead of the dinner plate for them all.
         </li>
-    </ul></p>
+    </ul>
+</p>

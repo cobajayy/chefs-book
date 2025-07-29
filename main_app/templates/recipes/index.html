@@ -1,8 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<link
-  rel="stylesheet"
-  href="{% static 'css/recipes/recipe-index.css' %}"
-/>
+<link rel="stylesheet" href="{% static 'css/recipes/recipe-index.css' %}" />
 {% endblock %} {% block content %}
 
 <section class="page-header">
@@ -10,20 +7,17 @@
   <img
     src="{% static 'images/fruits1.svg' %}"
     alt="Two pieces of Fruit"
-        class="icon"
-
+    class="icon"
   />
   <img
     src="{% static 'images/veggies.svg' %}"
     alt="A box of Vegetables"
-        class="icon"
-
+    class="icon"
   />
   <img
     src="{% static 'images/steak.svg' %}"
     alt="A Fillet of Steak"
     class="icon"
-
   />
   <img
     src="{% static 'images/bread.svg' %}"
@@ -36,17 +30,17 @@
   {% for recipe in recipes %}
   <div class="card">
     <a href="{% url 'recipe_detail' recipe.id %}">
-    <div class="card-content">
-      <div class="card-img-container">
-        <img
-          src="{% static 'images/dinner-plate1.svg' %}"
-          alt="A dinner plate with fork and knife"
-        />
+      <div class="card-content">
+        <div class="card-img-container">
+          <img
+            src="{% static 'images/dinner-plate1.svg' %}"
+            alt="A dinner plate with fork and knife"
+          />
+        </div>
+        <h2 class="card-title">{{ recipe.name }}</h2>
+        <h3 class="card-title">{{ recipe.cuisine }}</h3>
+        <p>{{ recipe.description }}</p>
       </div>
-      <h2 class="card-title">{{ recipe.name }}</h2>
-      <h3 class="card-title">{{ recipe.cuisine }}</h3>
-      <p>{{ recipe.description }}</p>
-    </div>
     </a>
   </div>
   {% endfor %}

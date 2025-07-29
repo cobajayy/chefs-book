@@ -66,7 +66,7 @@
   </section>
 
   <section class="pantry">
-    <div class="subsection-title">
+    <div class="subsection-title centered-icons">
       <img src="{% static 'images/fruits1.svg' %}" alt="Two pieces of Fruit" />
       <img src="{% static 'images/veggies.svg' %}" alt="A box of Vegetables" />
       <img src="{% static 'images/steak.svg' %}" alt="A Fillet of Steak" />
@@ -80,6 +80,7 @@
           <p>
             {{ pantry.quantity }} {{ pantry.measurement }} {{ pantry.name }}
           </p>
+
           <form
             action="{% url 'remove_pantry' recipe.id pantry.id %}"
             method="post"
@@ -96,20 +97,27 @@
   </section>
 
   <section class="pantry">
-    <div class="subsection-title">
-      <h2>Pantry Items</h2>
+    <div class="subsection-title centered-icons">
       <img
+        class="icon"
         src="{% static 'images/salt-pepper1.svg' %}"
         alt="Salt and pepper shaker"
       />
-      <img src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
       <img
-        src="{% static 'images/salt-pepper2.svg' %}"
-        alt="Salt and pepper shaker"
+        class="icon"
+        src="{% static 'images/olive-oil2.svg' %}"
+        alt="Bottle of olive oil"
+      />
+
+      <img
+        class="icon"
+        src="{% static 'images/beans.svg' %}"
+        alt="Can of Beans"
       />
     </div>
 
     <div class="subsection-content">
+      <h2>Pantry Items</h2>
       <h3>Available Ingredients</h3>
       {% for pantry in pantry %}
       <div class="pantry-container">

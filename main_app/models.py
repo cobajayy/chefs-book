@@ -19,8 +19,6 @@ class CuisineType(models.TextChoices):
     EUROPEAN = 'European'
     LATIN = 'Latin'
     MIDDLEEASTERN = 'Middle Eastern'
- 
-
 
 class Pantry(models.Model):
     name = models.CharField(max_length=50)

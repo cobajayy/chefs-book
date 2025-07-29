@@ -69,6 +69,7 @@ class PantryDetail(DetailView):
 class PantryUpdate(UpdateView):
     model = Pantry
     fields = '__all__'
+    success_url = '/pantry/'
 
 class PantryDelete(DeleteView):
     model = Pantry

@@ -10,41 +10,43 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
     <title>Chef's Book</title>
-    {% block head %} 
-    {% endblock %}
+    {% block head %} {% endblock %}
   </head>
   <body>
-    <header>
-      <div class="header-logo-container">
-        <a href="/">
-          <img src="{% static 'images/chefs-book-main-logo.png' %}" alt="The Chef's Book Logo" />
+    <header class="main-header">
+        <a href="/" class="header-logo-container">
+          <img
+            src="{% static 'images/chefs-book-main-logo.png' %}"
+            alt="The Chef's Book Logo"
+          />
         </a>
-      </div>
       <nav>
         <ul>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'recipe_index' %}">All Recipes</a></li>
-            <li><a href="{% url 'pantry_index' %}">All Pantry Items</a></li>
-            <li><a href="{% url 'recipe_create' %}">Add a Recipe</a></li>
-            <li><a href="{% url 'pantry_create' %}">Add a Pantry Item</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li>
-              <form id="logout-form" method="post" action="{% url 'logout' %}" class="nav-logout-form">
-                {% csrf_token %}
-                <button type="submit">Log out</button>
-              </form>
-            </li>
+          <li><a href="{% url 'recipe_index' %}">All Recipes</a></li>
+          <li><a href="{% url 'pantry_index' %}">All Pantry Items</a></li>
+          <li><a href="{% url 'recipe_create' %}">Add a Recipe</a></li>
+          <li><a href="{% url 'pantry_create' %}">Add a Pantry Item</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li>
+            <form
+              id="logout-form"
+              method="post"
+              action="{% url 'logout' %}"
+              class="nav-logout-form"
+            >
+              {% csrf_token %}
+              <button type="submit">Log out</button>
+            </form>
+          </li>
           {% else %}
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'home' %}">Login</a></li>
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'home' %}">Login</a></li>
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
           {% endif %}
         </ul>
       </nav>
     </header>
-    <main>
-     {% block content %} 
-     {% endblock %}
-     </main>
+    <main>{% block content %} {% endblock %}</main>
   </body>
 </html>

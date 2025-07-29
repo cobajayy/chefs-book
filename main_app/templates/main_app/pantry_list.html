@@ -1,30 +1,34 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'css/pantry/pantry-index.css' %}" />
-{% endblock %} 
-{% block content %}
+{% endblock %} {% block content %}
 
 <section class="page-header">
   <h1>All Pantry Items</h1>
-      <img class='icon' src="{% static 'images/salt-pepper1.svg' %}" alt="Salt and pepper shaker" />
-      <img class='icon' src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
-     
-      <img class='icon' src="{% static 'images/salt-pepper1.svg' %}" alt="Salt and pepper shaker" />
-      <img class='icon' src="{% static 'images/olive-oil2.svg' %}" alt="pantry icon" />
-     
+  <img
+    class="icon"
+    src="{% static 'images/salt-pepper1.svg' %}"
+    alt="Salt and pepper shaker"
+  />
+  <img
+    class="icon"
+    src="{% static 'images/olive-oil2.svg' %}"
+    alt="Bottle of olive oil"
+  />
+
+  <img class="icon" src="{% static 'images/beans.svg' %}" alt="Can of Beans" />
+  <img class="icon" src="{% static 'images/jam.svg' %}" alt="Jar of Jam" />
 </section>
 
 <section class="card-container">
   {% for pantry in pantry_list %}
-    <div class="card" >
-      <a href="{% url 'pantry_detail' pantry.id %}">
-        <div class="card-content">
-          <h2>{{ pantry.name }}</h2>
-          <p>{{ pantry.quantity }} {{ pantry.measurement }}</p>
-        </div>
-      </a>
-    </div>
+  <div class="card">
+    <a href="{% url 'pantry_detail' pantry.id %}">
+      <div class="card-content">
+        <h2>{{ pantry.name }}</h2>
+        <p>{{ pantry.quantity }} {{ pantry.measurement }}</p>
+      </div>
+    </a>
+  </div>
   {% endfor %}
 </section>
 

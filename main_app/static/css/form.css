@@ -33,11 +33,6 @@
 .btn {
   background-color: #588157;
   color: white;
-  /* padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer; */
-
   padding: 8px 16px;
   border-radius: 6px;
   border-width: 2px;
@@ -49,7 +44,6 @@
   font-family: inherit;
   margin-right: 10px;
 }
-
 
 .btn:hover {
   background-color: #3a5a40;

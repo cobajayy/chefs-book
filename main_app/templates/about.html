@@ -1,8 +1,11 @@
-{% extends 'base.html' %} 
-{% block content %}
-<h1>About Chef's Book</h1>
-<hr />
-<p class="page-content">
- All your favorite recipes in one place!
-</p>
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+{% endblock %} {% block content %}
+
+<body>
+  <div class="about">
+    <h1>About Chef's Book</h1>
+    <p class="page-content">All your favorite recipes in one place!</p>
+  </div>
+</body>
 {% endblock %}
