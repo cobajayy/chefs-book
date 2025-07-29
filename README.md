@@ -16,7 +16,7 @@ Project planning link: <link>https://trello.com/b/0QFa1cEX/recipe-app-board</lin
 <br></br>
 Deployed Link: Coming Soon
 <br></br>
-<p>Technologies: My main technology used was Python, Django, CSS, and HTML. 
+<p>Technologies: My main technology used was Python, Django, PostgeSQL, CSS, HTML, GitHub. 
 </p>
 <p>Next steps: 
     <ul>
