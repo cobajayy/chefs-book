@@ -29,8 +29,11 @@ Deployed Link: Coming Soon
         I want to create list filters to choose specific cuisines within the main cuisine (ie European then dropdown and choose between Italian, Spanish, French, etc.)
         </li>
         <li>
-        I want to create a community page to view others recipes
+        I want to create a grocery portion that the user can verify whether they have the pantry ingredients needed and then add them to the grocery list. 
         </li>
-        <li>I want to render an image based off the cuisine instead of the dinner plate for them all
+        <li>
+        I want to create a community page to view and share others recipes.
+        </li>
+        <li>I want to render an image based off the cuisine instead of the dinner plate for them all.
         </li>
     </ul></p>
